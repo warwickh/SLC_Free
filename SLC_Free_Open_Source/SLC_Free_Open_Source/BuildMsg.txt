@@ -69,9 +69,9 @@ symbol INSAMP_SetGain is unused
 symbol DAC6_VGND_WriteBlind is unused
 603 bytes unused code deleted
 no worthwhile duplicate found
-  ROM 89% full. 3607 out of 4096 bytes used (does not include absolute areas).
+  ROM 84% full. 3436 out of 4096 bytes used (does not include absolute areas).
   RAM 40% full. 101 bytes used (does not include stack usage).
 Built with ICCM8C STD V7.05.00
  
-SLC_Free_Open_Source - 0 error(s) 0 warning(s) 12:54:08
+SLC_Free_Open_Source - 0 error(s) 0 warning(s) 21:45:04
 

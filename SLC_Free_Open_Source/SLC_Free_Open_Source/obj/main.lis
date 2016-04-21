@@ -1,0 +1,1689 @@
+                        .module main.c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile ./main.c
+                        .area lit(rom, con, rel, lit)
+ 0000           _ip_to_Vout_Lookup::
+ 0000 0001              .byte 0,1
+ 0002 0102              .byte 1,2
+ 0004 0304              .byte 3,4
+ 0006 0405              .byte 4,5
+ 0008 0607              .byte 6,7
+ 000A 0808              .byte 8,8
+ 000C 090A              .byte 9,10
+ 000E 0B0C              .byte 11,12
+ 0010 0C0D              .byte 12,13
+ 0012 0E0F              .byte 14,15
+ 0014 1011              .byte 16,17
+ 0016 1112              .byte 17,18
+ 0018 1314              .byte 19,20
+ 001A 1516              .byte 21,22
+ 001C 1617              .byte 22,23
+ 001E 1819              .byte 24,25
+ 0020 1A1B              .byte 26,27
+ 0022 1B1C              .byte 27,28
+ 0024 1D1E              .byte 29,30
+ 0026 1F20              .byte 31,32
+ 0028 2122              .byte 33,34
+ 002A 2223              .byte 34,35
+ 002C 2425              .byte 36,37
+ 002E 2627              .byte 38,39
+ 0030 2829              .byte 40,41
+ 0032 2A2B              .byte 42,43
+ 0034 2C2C              .byte 44,44
+ 0036 2D2E              .byte 45,46
+ 0038 2F30              .byte 47,48
+ 003A 3132              .byte 49,50
+ 003C 3334              .byte 51,52
+ 003E 3536              .byte 53,54
+ 0040 3738              .byte 55,56
+ 0042 393A              .byte 57,58
+ 0044 3B3C              .byte 59,60
+ 0046 3D3E              .byte 61,62
+ 0048 3F40              .byte 63,64
+ 004A 4142              .byte 'A,'B
+ 004C 4344              .byte 'C,'D
+ 004E 4546              .byte 'E,'F
+ 0050 4748              .byte 'G,'H
+ 0052 494A              .byte 'I,'J
+ 0054 4C4D              .byte 'L,'M
+ 0056 4E4F              .byte 'N,'O
+ 0058 5051              .byte 'P,'Q
+ 005A 5253              .byte 'R,'S
+ 005C 5456              .byte 'T,'V
+ 005E 5758              .byte 'W,'X
+ 0060 595A              .byte 'Y,'Z
+ 0062 5B5C              .byte 91,92
+ 0064 5E5F              .byte 94,95
+ 0066 6061              .byte 96,'a
+ 0068 6264              .byte 'b,'d
+ 006A 6566              .byte 'e,'f
+ 006C 6769              .byte 'g,'i
+ 006E 6A6B              .byte 'j,'k
+ 0070 6C6E              .byte 'l,'n
+ 0072 6F70              .byte 'o,'p
+ 0074 7173              .byte 'q,'s
+ 0076 7475              .byte 't,'u
+ 0078 7778              .byte 'w,'x
+ 007A 7B7E              .byte 123,126
+ 007C 8184              .byte 129,132
+ 007E 878A              .byte 135,138
+ 0080 8D90              .byte 141,144
+ 0082 9397              .byte 147,151
+ 0084 9A9D              .byte 154,157
+ 0086 A1A4              .byte 161,164
+ 0088 A8AB              .byte 168,171
+ 008A AFB2              .byte 175,178
+ 008C B6BA              .byte 182,186
+ 008E BEC2              .byte 190,194
+ 0090 C5C9              .byte 197,201
+ 0092 CED2              .byte 206,210
+ 0094 D6DA              .byte 214,218
+ 0096 DEE3              .byte 222,227
+ 0098 E7EC              .byte 231,236
+ 009A F0F5              .byte 240,245
+ 009C FAFF              .byte 250,255
+ 009E                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 009E                   .dbsym e ip_to_Vout_Lookup _ip_to_Vout_Lookup A[158:158]kc
+ 009E           _ip_to_Graph_Lookup::
+ 009E 0808              .byte 8,8
+ 00A0 0809              .byte 8,9
+ 00A2 0909              .byte 9,9
+ 00A4 0909              .byte 9,9
+ 00A6 0A0A              .byte 10,10
+ 00A8 0A0A              .byte 10,10
+ 00AA 0A0B              .byte 10,11
+ 00AC 0B0B              .byte 11,11
+ 00AE 0B0C              .byte 11,12
+ 00B0 0C0C              .byte 12,12
+ 00B2 0C0C              .byte 12,12
+ 00B4 0D0D              .byte 13,13
+ 00B6 0D0D              .byte 13,13
+ 00B8 0E0E              .byte 14,14
+ 00BA 0E0E              .byte 14,14
+ 00BC 0E0F              .byte 14,15
+ 00BE 0F0F              .byte 15,15
+ 00C0 0F10              .byte 15,16
+ 00C2 1010              .byte 16,16
+ 00C4 1010              .byte 16,16
+ 00C6 1111              .byte 17,17
+ 00C8 1111              .byte 17,17
+ 00CA 1212              .byte 18,18
+ 00CC 1212              .byte 18,18
+ 00CE 1313              .byte 19,19
+ 00D0 1313              .byte 19,19
+ 00D2 1414              .byte 20,20
+ 00D4 1414              .byte 20,20
+ 00D6 1515              .byte 21,21
+ 00D8 1515              .byte 21,21
+ 00DA 1616              .byte 22,22
+ 00DC 1616              .byte 22,22
+ 00DE 1717              .byte 23,23
+ 00E0 1717              .byte 23,23
+ 00E2 1818              .byte 24,24
+ 00E4 1819              .byte 24,25
+ 00E6 1919              .byte 25,25
+ 00E8 191A              .byte 25,26
+ 00EA 1A1A              .byte 26,26
+ 00EC 1A1B              .byte 26,27
+ 00EE 1B1B              .byte 27,27
+ 00F0 1C1C              .byte 28,28
+ 00F2 1C1C              .byte 28,28
+ 00F4 1D1D              .byte 29,29
+ 00F6 1D1E              .byte 29,30
+ 00F8 1E1E              .byte 30,30
+ 00FA 1F1F              .byte 31,31
+ 00FC 1F1F              .byte 31,31
+ 00FE 2020              .byte 32,32
+ 0100 2021              .byte 32,33
+ 0102 2121              .byte 33,33
+ 0104 2222              .byte 34,34
+ 0106 2223              .byte 34,35
+ 0108 2323              .byte 35,35
+ 010A 2424              .byte 36,36
+ 010C 2425              .byte 36,37
+ 010E 2525              .byte 37,37
+ 0110 2626              .byte 38,38
+ 0112 2627              .byte 38,39
+ 0114 2727              .byte 39,39
+ 0116 2828              .byte 40,40
+ 0118 292A              .byte 41,42
+ 011A 2A2B              .byte 42,43
+ 011C 2C2D              .byte 44,45
+ 011E 2E2E              .byte 46,46
+ 0120 2F30              .byte 47,48
+ 0122 3132              .byte 49,50
+ 0124 3334              .byte 51,52
+ 0126 3536              .byte 53,54
+ 0128 3738              .byte 55,56
+ 012A 393A              .byte 57,58
+ 012C 3B3C              .byte 59,60
+ 012E 3D3E              .byte 61,62
+ 0130 3F40              .byte 63,64
+ 0132 4142              .byte 'A,'B
+ 0134 4344              .byte 'C,'D
+ 0136 4647              .byte 'F,'G
+ 0138 4849              .byte 'H,'I
+ 013A 4B4C              .byte 'K,'L
+ 013C                   .dbsym e ip_to_Graph_Lookup _ip_to_Graph_Lookup A[158:158]kc
+ 013C           _Ri_Delta_to_Graph::
+ 013C 504E              .byte 'P,'N
+ 013E 4D4B              .byte 'M,'K
+ 0140 4A49              .byte 'J,'I
+ 0142 4746              .byte 'G,'F
+ 0144 4443              .byte 'D,'C
+ 0146 4140              .byte 'A,64
+ 0148 3F3D              .byte 63,61
+ 014A 3C3B              .byte 60,59
+ 014C 3A38              .byte 58,56
+ 014E 3736              .byte 55,54
+ 0150 3433              .byte 52,51
+ 0152 3231              .byte 50,49
+ 0154 302E              .byte 48,46
+ 0156 2D2C              .byte 45,44
+ 0158 2B2A              .byte 43,42
+ 015A 2928              .byte 41,40
+ 015C 2725              .byte 39,37
+ 015E 2423              .byte 36,35
+ 0160 2221              .byte 34,33
+ 0162 201F              .byte 32,31
+ 0164 1E1D              .byte 30,29
+ 0166 1C1B              .byte 28,27
+ 0168 1A19              .byte 26,25
+ 016A 1817              .byte 24,23
+ 016C 1615              .byte 22,21
+ 016E 1413              .byte 20,19
+ 0170 1212              .byte 18,18
+ 0172 1110              .byte 17,16
+ 0174 0F0E              .byte 15,14
+ 0176 0D0C              .byte 13,12
+ 0178 0B0B              .byte 11,11
+ 017A 0A09              .byte 10,9
+ 017C 0807              .byte 8,7
+ 017E 0605              .byte 6,5
+ 0180 0504              .byte 5,4
+ 0182 0302              .byte 3,2
+ 0184 0101              .byte 1,1
+ 0186 00                .byte 0
+ 0187                   .dbsym e Ri_Delta_to_Graph _Ri_Delta_to_Graph A[75:75]kc
+                        .area data(ram, con, rel)
+ 0000                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0000           _Ri_Mid_Error_Sum::
+ 0000                   .blkb 2
+                        .area idata(rom,lit)
+ 0000 0000              .word 0
+                        .area data(ram, con, rel)
+ 0002                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0002                   .dbsym e Ri_Mid_Error_Sum _Ri_Mid_Error_Sum I
+ 0002           _Ri_Delta_Error_Sum::
+ 0002                   .blkb 2
+                        .area idata(rom,lit)
+ 0002 0000              .word 0
+                        .area data(ram, con, rel)
+ 0004                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0004                   .dbsym e Ri_Delta_Error_Sum _Ri_Delta_Error_Sum I
+ 0004           _Heatup_Heater_Output::
+ 0004                   .blkb 1
+                        .area idata(rom,lit)
+ 0004 64                .byte 100
+                        .area data(ram, con, rel)
+ 0005                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0005                   .dbsym e Heatup_Heater_Output _Heatup_Heater_Output c
+                        .area text(rom, con, rel)
+ 0000                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0000                   .dbfunc e Heater_PID _Heater_PID fV
+ 0000           _Heater_PID::
+ 0000                   .dbline -1
+ 0000                   .dbline 82
+ 0000           ; //----------------------------------------------------------------------------
+ 0000           ; // C main line
+ 0000           ; //----------------------------------------------------------------------------
+ 0000           ; #include <m8c.h>        // part specific constants and macros
+ 0000           ; #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
+ 0000           ; extern BYTE ADC_Counter; //Variable Declared in ADCININT.asm
+ 0000           ; extern BYTE Ri_Max_x1; //Variable Declared in ADCININT.asm
+ 0000           ; extern BYTE Ri_Min_x1; //Variable Declared in ADCININT.asm
+ 0000           ; extern BYTE ip_x1; //Variable Declared in ADCININT.asm
+ 0000           ; extern BYTE ADC_IF; //Variable Declared in ADCININT.asm
+ 0000           ; extern BYTE Sleep_Counter; //Variable Declared in SleepTimerINT.asm
+ 0000           ; 
+ 0000           ; #define Vout_Lookup_Counter_Set 25
+ 0000           ; #define LCD_Counter_Set 50
+ 0000           ; 
+ 0000           ; #define Lin_Out
+ 0000           ; #define NB_Out
+ 0000           ; #define LCD_Lambda_Graph
+ 0000           ; #define LCD_Temperature_Graph
+ 0000           ; //#define PID_Tune
+ 0000           ; #define Ri_Filter_Strength 4
+ 0000           ; #define ip_Filter_Strength 4
+ 0000           ; 
+ 0000           ; #ifdef PID_Tune
+ 0000           ;       INT Ri_Mid_Target= 271; //256+14.769 = 2.53v = 2.08v(VGND) + 0.45v, PID Target Voltage of Nermest Cell 
+ 0000           ;       INT Ia_PID_Kp = 35;
+ 0000           ;       INT Ia_PID_Ki = 8;
+ 0000           ;       INT Ia_Output_Bias = 256;
+ 0000           ;       INT Ri_Delta_Target=143; //PID Target peak to peak Voltage of Nermest Cell
+ 0000           ;       INT Heater_PID_Kp =-72;
+ 0000           ;       INT Heater_PID_Ki =-4;
+ 0000           ;       INT Heater_PID_Output_Bias =128;
+ 0000           ; #else
+ 0000           ;       #define Ri_Mid_Target 271 //256+14.769 = 2.53v = 2.08v(VGND) + 0.45v, PID Target Voltage of Nermest Cell
+ 0000           ;       #define Ia_PID_Kp 25
+ 0000           ;       #define Ia_PID_Ki 4
+ 0000           ;       #define Ia_Output_Bias 256
+ 0000           ;       #define Ri_Delta_Target 143 //PID Target peak to peak Voltage of Nermest Cell
+ 0000           ;       #define Heater_PID_Kp -72
+ 0000           ;       #define Heater_PID_Ki -4
+ 0000           ;       #define Heater_PID_Output_Bias 128
+ 0000           ; #endif
+ 0000           ; 
+ 0000           ; #ifdef Lin_Out
+ 0000           ;       #define ip_to_Vout_Lookup_Start 135
+ 0000           ;       #define ip_to_Vout_Lookup_Size 158
+ 0000           ;       const BYTE ip_to_Vout_Lookup[ip_to_Vout_Lookup_Size] = {0,1,1,2,3,4,4,5,6,7,8,8,9,10,11,12,12,13,14,15,16,17,17,18,19,20,21,22,22,23,24,25,26,27,27,28,29,30,31,32,33,34,34,35,36,37,38,39,40,41,42,43,44,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,76,77,78,79,80,81,82,83,84,86,87,88,89,90,91,92,94,95,96,97,98,100,101,102,103,105,106,107,108,110,111,112,113,115,116,117,119,120,123,126,129,132,135,138,141,144,147,151,154,157,161,164,168,171,175,178,182,186,190,194,197,201,206,210,214,218,222,227,231,236,240,245,250,255}; 
+ 0000           ; #endif
+ 0000           ; 
+ 0000           ; #ifdef LCD_Lambda_Graph
+ 0000           ;       #define ip_to_Lambda_Lookup_Start 135
+ 0000           ;       #define ip_to_Lambda_Lookup_Size 158
+ 0000           ;       const BYTE ip_to_Graph_Lookup[ip_to_Lambda_Lookup_Size]={8,8,8,9,9,9,9,9,10,10,10,10,10,11,11,11,11,12,12,12,12,12,13,13,13,13,14,14,14,14,14,15,15,15,15,16,16,16,16,16,17,17,17,17,18,18,18,18,19,19,19,19,20,20,20,20,21,21,21,21,22,22,22,22,23,23,23,23,24,24,24,25,25,25,25,26,26,26,26,27,27,27,28,28,28,28,29,29,29,30,30,30,31,31,31,31,32,32,32,33,33,33,34,34,34,35,35,35,36,36,36,37,37,37,38,38,38,39,39,39,40,40,41,42,42,43,44,45,46,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,70,71,72,73,75,76};
+ 0000           ; #endif
+ 0000           ; 
+ 0000           ; #ifdef LCD_Temperature_Graph
+ 0000           ;       #define Ri_Delta_to_Temperature_C_Start 113
+ 0000           ;       #define Ri_Delta_to_Temperature_C_Size 75
+ 0000           ;       const BYTE Ri_Delta_to_Graph[Ri_Delta_to_Temperature_C_Size]={80,78,77,75,74,73,71,70,68,67,65,64,63,61,60,59,58,56,55,54,52,51,50,49,48,46,45,44,43,42,41,40,39,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21,20,19,18,18,17,16,15,14,13,12,11,11,10,9,8,7,6,5,5,4,3,2,1,1,0};
+ 0000           ; #endif
+ 0000           ; 
+ 0000           ; 
+ 0000           ; 
+ 0000           ; INT Ri_Mid_Error_Sum=0;
+ 0000           ; INT Ri_Mid;
+ 0000           ; INT Ri_Delta_Error_Sum=0;
+ 0000           ; INT Ri_Delta;
+ 0000           ; #define Ia_PID_Counter_Set 1
+ 0000           ; #define Heatup_Counter_Set 100
+ 0000           ; #define Heater_PID_Counter_Set 25
+ 0000           ; BYTE Heatup_Heater_Output=100;
+ 0000           ; 
+ 0000           ; INT Ri_Delta_Error;
+ 0000           ; INT Heater_Output;
+ 0000           ; INT Heater_Pout;
+ 0000           ; INT Heater_Iout;
+ 0000           ; 
+ 0000           ; //PID Controller, Input is Ri_Delta (The Peak to peak voltage on the Vs Port of the sensor) output is PWM8_Heater, PWM8_Heater is controlled such that Ri_Delta is maintained at 80 (80 =750C)
+ 0000           ; //Only a PI controller is used as adding the D term does not effect performance 
+ 0000           ; //Everything is inflated by a factor of 4 so that floating point is avioded
+ 0000           ; void Heater_PID(void) // Ned to run this when counter >50
+ 0000           ; {
+ 0000                   .dbline 84
+ 0000           ; 
+ 0000           ;       Ri_Delta_Error=Ri_Delta_Target-Ri_Delta;
+ 0000 508F              mov A,-113
+ 0002 121C              sub A,[_Ri_Delta+1]
+ 0004 531A              mov [_Ri_Delta_Error+1],A
+ 0006 5000              mov A,0
+ 0008 1A1B              sbb A,[_Ri_Delta]
+ 000A 5319              mov [_Ri_Delta_Error],A
+ 000C                   .dbline 86
+ 000C           ;       //Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
+ 000C           ;       if (Ri_Delta_Error>56)
+ 000C 5038              mov A,56
+ 000E 121A              sub A,[_Ri_Delta_Error+1]
+ 0010 5119              mov A,[_Ri_Delta_Error]
+ 0012 3180              xor A,-128
+ 0014 5300              mov [__rX],A
+ 0016 5080              mov A,(0 ^ 0x80)
+ 0018 1A00              sbb A,[__rX]
+ 001A D007              jnc L2
+ 001C           X0:
+ 001C                   .dbline 88
+ 001C           ;       {
+ 001C           ;               Ri_Delta_Error=56;
+ 001C                   .dbline 88
+ 001C 551A38            mov [_Ri_Delta_Error+1],56
+ 001F 551900            mov [_Ri_Delta_Error],0
+ 0022                   .dbline 89
+ 0022           ;       }
+ 0022           L2:
+ 0022                   .dbline 90
+ 0022           ;       if (Ri_Delta_Error<-56)
+ 0022 511A              mov A,[_Ri_Delta_Error+1]
+ 0024 11C8              sub A,-56
+ 0026 5119              mov A,[_Ri_Delta_Error]
+ 0028 3180              xor A,-128
+ 002A 197F              sbb A,(-1 ^ 0x80)
+ 002C D007              jnc L4
+ 002E           X1:
+ 002E                   .dbline 92
+ 002E           ;       {
+ 002E           ;               Ri_Delta_Error=-56;
+ 002E                   .dbline 92
+ 002E 551AC8            mov [_Ri_Delta_Error+1],-56
+ 0031 5519FF            mov [_Ri_Delta_Error],-1
+ 0034                   .dbline 93
+ 0034           ;       }
+ 0034           L4:
+ 0034                   .dbline 94
+ 0034           ;       Heater_Pout=(Heater_PID_Kp*Ri_Delta_Error)/16;
+ 0034 5F001A            mov [__r1],[_Ri_Delta_Error+1]
+ 0037 5F0019            mov [__r0],[_Ri_Delta_Error]
+ 003A 5500B8            mov [__r3],-72
+ 003D 5500FF            mov [__r2],-1
+ 0040 550000            mov [__rX],0
+ 0043 550000            mov [__rY],0
+ 0046           X2:
+ 0046 3C0000            cmp [__r2],0
+ 0049 B006              jnz X5
+ 004B 3C0000            cmp [__r3],0
+ 004E A017              jz X4
+ 0050           X5:
+ 0050 70FB              and F,-5
+ 0052 6E00              rrc [__r2]
+ 0054 6E00              rrc [__r3]
+ 0056 D009              jnc X3
+ 0058 5100              mov A,[__r1]
+ 005A 0400              add [__rX],A
+ 005C 5100              mov A,[__r0]
+ 005E 0C00              adc [__rY],A
+ 0060           X3:
+ 0060 6500              asl [__r1]
+ 0062 6B00              rlc [__r0]
+ 0064 8FE1              jmp X2
+ 0066           X4:
+ 0066 5F0000            mov [__r1],[__rX]
+ 0069 5F0000            mov [__r0],[__rY]
+ 006C 5000              mov A,0
+ 006E 08                push A
+ 006F 5010              mov A,16
+ 0071 08                push A
+ 0072 5100              mov A,[__r0]
+ 0074 08                push A
+ 0075 5100              mov A,[__r1]
+ 0077 08                push A
+ 0078 7C0000            xcall __divmod_16X16_16
+ 007B 18                pop A
+ 007C 5316              mov [_Heater_Pout+1],A
+ 007E 18                pop A
+ 007F 5315              mov [_Heater_Pout],A
+ 0081 38FE              add SP,-2
+ 0083                   .dbline 95
+ 0083           ;       Ri_Delta_Error_Sum=Ri_Delta_Error_Sum+Ri_Delta_Error;
+ 0083 511A              mov A,[_Ri_Delta_Error+1]
+ 0085 0403              add [_Ri_Delta_Error_Sum+1],A
+ 0087 5119              mov A,[_Ri_Delta_Error]
+ 0089 0C02              adc [_Ri_Delta_Error_Sum],A
+ 008B                   .dbline 104
+ 008B           ;       //If the sensor is too hot, then disreguard the Integratal contribution and just use the proportional to quickly correct the sensor temperature
+ 008B           ;       /*
+ 008B           ;       if((Ri_Delta<60)&&(Ri_Delta_Error_Sum>0))
+ 008B           ;       {
+ 008B           ;               Ri_Delta_Error_Sum=0;
+ 008B           ;       }
+ 008B           ;       */
+ 008B           ;       //Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
+ 008B           ;       if (Ri_Delta_Error_Sum>1024)
+ 008B 5000              mov A,0
+ 008D 1203              sub A,[_Ri_Delta_Error_Sum+1]
+ 008F 5102              mov A,[_Ri_Delta_Error_Sum]
+ 0091 3180              xor A,-128
+ 0093 5300              mov [__rX],A
+ 0095 5084              mov A,(4 ^ 0x80)
+ 0097 1A00              sbb A,[__rX]
+ 0099 D007              jnc L6
+ 009B           X6:
+ 009B                   .dbline 106
+ 009B           ;       {
+ 009B           ;               Ri_Delta_Error_Sum=1024;
+ 009B                   .dbline 106
+ 009B 550300            mov [_Ri_Delta_Error_Sum+1],0
+ 009E 550204            mov [_Ri_Delta_Error_Sum],4
+ 00A1                   .dbline 107
+ 00A1           ;       }
+ 00A1           L6:
+ 00A1                   .dbline 108
+ 00A1           ;       if (Ri_Delta_Error_Sum<-1024)
+ 00A1 5103              mov A,[_Ri_Delta_Error_Sum+1]
+ 00A3 1100              sub A,0
+ 00A5 5102              mov A,[_Ri_Delta_Error_Sum]
+ 00A7 3180              xor A,-128
+ 00A9 197C              sbb A,(-4 ^ 0x80)
+ 00AB D007              jnc L8
+ 00AD           X7:
+ 00AD                   .dbline 110
+ 00AD           ;       {
+ 00AD           ;               Ri_Delta_Error_Sum=-1024;
+ 00AD                   .dbline 110
+ 00AD 550300            mov [_Ri_Delta_Error_Sum+1],0
+ 00B0 5502FC            mov [_Ri_Delta_Error_Sum],-4
+ 00B3                   .dbline 111
+ 00B3           ;       }
+ 00B3           L8:
+ 00B3                   .dbline 112
+ 00B3           ;       Heater_Iout=(Heater_PID_Ki*Ri_Delta_Error_Sum)/16;
+ 00B3 5F0003            mov [__r1],[_Ri_Delta_Error_Sum+1]
+ 00B6 5F0002            mov [__r0],[_Ri_Delta_Error_Sum]
+ 00B9 5500FC            mov [__r3],-4
+ 00BC 5500FF            mov [__r2],-1
+ 00BF 550000            mov [__rX],0
+ 00C2 550000            mov [__rY],0
+ 00C5           X8:
+ 00C5 3C0000            cmp [__r2],0
+ 00C8 B006              jnz X11
+ 00CA 3C0000            cmp [__r3],0
+ 00CD A017              jz X10
+ 00CF           X11:
+ 00CF 70FB              and F,-5
+ 00D1 6E00              rrc [__r2]
+ 00D3 6E00              rrc [__r3]
+ 00D5 D009              jnc X9
+ 00D7 5100              mov A,[__r1]
+ 00D9 0400              add [__rX],A
+ 00DB 5100              mov A,[__r0]
+ 00DD 0C00              adc [__rY],A
+ 00DF           X9:
+ 00DF 6500              asl [__r1]
+ 00E1 6B00              rlc [__r0]
+ 00E3 8FE1              jmp X8
+ 00E5           X10:
+ 00E5 5F0000            mov [__r1],[__rX]
+ 00E8 5F0000            mov [__r0],[__rY]
+ 00EB 5000              mov A,0
+ 00ED 08                push A
+ 00EE 5010              mov A,16
+ 00F0 08                push A
+ 00F1 5100              mov A,[__r0]
+ 00F3 08                push A
+ 00F4 5100              mov A,[__r1]
+ 00F6 08                push A
+ 00F7 7C0000            xcall __divmod_16X16_16
+ 00FA 18                pop A
+ 00FB 5314              mov [_Heater_Iout+1],A
+ 00FD 18                pop A
+ 00FE 5313              mov [_Heater_Iout],A
+ 0100 38FE              add SP,-2
+ 0102                   .dbline 113
+ 0102           ;       if (Heatup_Heater_Output<255) // if Heatup_Heater_Output is < 255 that means the unit just turned on and to give control to the heatup routine
+ 0102 3C04FF            cmp [_Heatup_Heater_Output],-1
+ 0105 D009              jnc L10
+ 0107           X12:
+ 0107                   .dbline 115
+ 0107           ;       {
+ 0107           ;               Heater_Output=Heatup_Heater_Output;     
+ 0107                   .dbline 115
+ 0107 5F1804            mov [_Heater_Output+1],[_Heatup_Heater_Output]
+ 010A 551700            mov [_Heater_Output],0
+ 010D                   .dbline 116
+ 010D           ;       }
+ 010D 8019              xjmp L11
+ 010F           L10:
+ 010F                   .dbline 118
+ 010F           ;       else
+ 010F           ;       {       
+ 010F                   .dbline 119
+ 010F           ;               Heater_Output=Heater_PID_Output_Bias+Heater_Pout+Heater_Iout;                   
+ 010F 5116              mov A,[_Heater_Pout+1]
+ 0111 0180              add A,-128
+ 0113 5300              mov [__r1],A
+ 0115 5115              mov A,[_Heater_Pout]
+ 0117 0900              adc A,0
+ 0119 5300              mov [__r0],A
+ 011B 5100              mov A,[__r1]
+ 011D 0214              add A,[_Heater_Iout+1]
+ 011F 5318              mov [_Heater_Output+1],A
+ 0121 5100              mov A,[__r0]
+ 0123 0A13              adc A,[_Heater_Iout]
+ 0125 5317              mov [_Heater_Output],A
+ 0127                   .dbline 120
+ 0127           ;       }
+ 0127           L11:
+ 0127                   .dbline 122
+ 0127           ;       //Heater_Output=Heater_PID_Output_Bias+Heater_Pout+Heater_Iout; 
+ 0127           ;       if (Heater_Output<0)
+ 0127 5118              mov A,[_Heater_Output+1]
+ 0129 1100              sub A,0
+ 012B 5117              mov A,[_Heater_Output]
+ 012D 3180              xor A,-128
+ 012F 1980              sbb A,(0 ^ 0x80)
+ 0131 D007              jnc L12
+ 0133           X13:
+ 0133                   .dbline 124
+ 0133           ;       {
+ 0133           ;               Heater_Output=0;
+ 0133                   .dbline 124
+ 0133 551800            mov [_Heater_Output+1],0
+ 0136 551700            mov [_Heater_Output],0
+ 0139                   .dbline 125
+ 0139           ;       }
+ 0139           L12:
+ 0139                   .dbline 126
+ 0139           ;       if (Heater_Output>255)
+ 0139 50FF              mov A,-1
+ 013B 1218              sub A,[_Heater_Output+1]
+ 013D 5117              mov A,[_Heater_Output]
+ 013F 3180              xor A,-128
+ 0141 5300              mov [__rX],A
+ 0143 5080              mov A,(0 ^ 0x80)
+ 0145 1A00              sbb A,[__rX]
+ 0147 D007              jnc L14
+ 0149           X14:
+ 0149                   .dbline 128
+ 0149           ;       {
+ 0149           ;               Heater_Output=255;
+ 0149                   .dbline 128
+ 0149 5518FF            mov [_Heater_Output+1],-1
+ 014C 551700            mov [_Heater_Output],0
+ 014F                   .dbline 129
+ 014F           ;       }
+ 014F           L14:
+ 014F                   .dbline 132
+ 014F           ; 
+ 014F           ; 
+ 014F           ;       PWM8_Heater_WritePulseWidth(Heater_Output);
+ 014F 5F0018            mov [__r0],[_Heater_Output+1]
+ 0152 10                push X
+ 0153 5100              mov A,[__r0]
+ 0155 7C0000            xcall _PWM8_Heater_WritePulseWidth
+ 0158 20                pop X
+ 0159                   .dbline -2
+ 0159           L1:
+ 0159                   .dbline 0 ; func end
+ 0159 7F                ret
+ 015A                   .dbend
+ 015A                   .dbfunc e Ia_PID _Ia_PID fV
+ 015A           _Ia_PID::
+ 015A                   .dbline -1
+ 015A                   .dbline 144
+ 015A           ;       //PWM8_Heater_WritePulseWidth(200);
+ 015A           ; }
+ 015A           ; 
+ 015A           ; INT Ri_Mid_Error;
+ 015A           ; INT Ia_Output;
+ 015A           ; INT Ia_Pout;
+ 015A           ; INT Ia_Iout;
+ 015A           ; //PID Controller, Input is Ri_Mid (The average voltage on the Vs Port of the sensor) output is DAC9_Ia, DAC9_Ia sink/sources current to the Sensor pump cell such that Ri_Mid is is the same voltage as Vref
+ 015A           ; //Only a PI controller is used as adding the D term does not effect performance 
+ 015A           ; //Everything is inflated by a factor of 4 so that floating point is avioded
+ 015A           ; void Ia_PID(void)
+ 015A           ; {
+ 015A                   .dbline 147
+ 015A           ; 
+ 015A           ; 
+ 015A           ;       Ri_Mid_Error=Ri_Mid_Target-Ri_Mid;
+ 015A 500F              mov A,15
+ 015C 121E              sub A,[_Ri_Mid+1]
+ 015E 5312              mov [_Ri_Mid_Error+1],A
+ 0160 5001              mov A,1
+ 0162 1A1D              sbb A,[_Ri_Mid]
+ 0164 5311              mov [_Ri_Mid_Error],A
+ 0166                   .dbline 149
+ 0166           ;       //Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
+ 0166           ;       if (Ri_Mid_Error>163)
+ 0166 50A3              mov A,-93
+ 0168 1212              sub A,[_Ri_Mid_Error+1]
+ 016A 5111              mov A,[_Ri_Mid_Error]
+ 016C 3180              xor A,-128
+ 016E 5300              mov [__rX],A
+ 0170 5080              mov A,(0 ^ 0x80)
+ 0172 1A00              sbb A,[__rX]
+ 0174 D007              jnc L17
+ 0176           X15:
+ 0176                   .dbline 151
+ 0176           ;       {
+ 0176           ;               Ri_Mid_Error=163;
+ 0176                   .dbline 151
+ 0176 5512A3            mov [_Ri_Mid_Error+1],-93
+ 0179 551100            mov [_Ri_Mid_Error],0
+ 017C                   .dbline 152
+ 017C           ;       }
+ 017C           L17:
+ 017C                   .dbline 153
+ 017C           ;       if (Ri_Mid_Error<-163)
+ 017C 5112              mov A,[_Ri_Mid_Error+1]
+ 017E 115D              sub A,93
+ 0180 5111              mov A,[_Ri_Mid_Error]
+ 0182 3180              xor A,-128
+ 0184 197F              sbb A,(-1 ^ 0x80)
+ 0186 D007              jnc L19
+ 0188           X16:
+ 0188                   .dbline 155
+ 0188           ;       {
+ 0188           ;               Ri_Mid_Error=-163;
+ 0188                   .dbline 155
+ 0188 55125D            mov [_Ri_Mid_Error+1],93
+ 018B 5511FF            mov [_Ri_Mid_Error],-1
+ 018E                   .dbline 156
+ 018E           ;       }
+ 018E           L19:
+ 018E                   .dbline 157
+ 018E           ;       Ia_Pout=(Ia_PID_Kp*Ri_Mid_Error)/16;
+ 018E 5F0012            mov [__r1],[_Ri_Mid_Error+1]
+ 0191 5F0011            mov [__r0],[_Ri_Mid_Error]
+ 0194 550019            mov [__r3],25
+ 0197 550000            mov [__r2],0
+ 019A 550000            mov [__rX],0
+ 019D 550000            mov [__rY],0
+ 01A0           X17:
+ 01A0 3C0000            cmp [__r2],0
+ 01A3 B006              jnz X20
+ 01A5 3C0000            cmp [__r3],0
+ 01A8 A017              jz X19
+ 01AA           X20:
+ 01AA 70FB              and F,-5
+ 01AC 6E00              rrc [__r2]
+ 01AE 6E00              rrc [__r3]
+ 01B0 D009              jnc X18
+ 01B2 5100              mov A,[__r1]
+ 01B4 0400              add [__rX],A
+ 01B6 5100              mov A,[__r0]
+ 01B8 0C00              adc [__rY],A
+ 01BA           X18:
+ 01BA 6500              asl [__r1]
+ 01BC 6B00              rlc [__r0]
+ 01BE 8FE1              jmp X17
+ 01C0           X19:
+ 01C0 5F0000            mov [__r1],[__rX]
+ 01C3 5F0000            mov [__r0],[__rY]
+ 01C6 5000              mov A,0
+ 01C8 08                push A
+ 01C9 5010              mov A,16
+ 01CB 08                push A
+ 01CC 5100              mov A,[__r0]
+ 01CE 08                push A
+ 01CF 5100              mov A,[__r1]
+ 01D1 08                push A
+ 01D2 7C0000            xcall __divmod_16X16_16
+ 01D5 18                pop A
+ 01D6 530E              mov [_Ia_Pout+1],A
+ 01D8 18                pop A
+ 01D9 530D              mov [_Ia_Pout],A
+ 01DB 38FE              add SP,-2
+ 01DD                   .dbline 158
+ 01DD           ;       Ri_Mid_Error_Sum=Ri_Mid_Error_Sum+Ri_Mid_Error;
+ 01DD 5112              mov A,[_Ri_Mid_Error+1]
+ 01DF 0401              add [_Ri_Mid_Error_Sum+1],A
+ 01E1 5111              mov A,[_Ri_Mid_Error]
+ 01E3 0C00              adc [_Ri_Mid_Error_Sum],A
+ 01E5                   .dbline 160
+ 01E5           ;       //Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
+ 01E5           ;       if (Ri_Mid_Error_Sum>1020)
+ 01E5 50FC              mov A,-4
+ 01E7 1201              sub A,[_Ri_Mid_Error_Sum+1]
+ 01E9 5100              mov A,[_Ri_Mid_Error_Sum]
+ 01EB 3180              xor A,-128
+ 01ED 5300              mov [__rX],A
+ 01EF 5083              mov A,(3 ^ 0x80)
+ 01F1 1A00              sbb A,[__rX]
+ 01F3 D007              jnc L21
+ 01F5           X21:
+ 01F5                   .dbline 162
+ 01F5           ;       {
+ 01F5           ;               Ri_Mid_Error_Sum=1020;
+ 01F5                   .dbline 162
+ 01F5 5501FC            mov [_Ri_Mid_Error_Sum+1],-4
+ 01F8 550003            mov [_Ri_Mid_Error_Sum],3
+ 01FB                   .dbline 163
+ 01FB           ;       }
+ 01FB           L21:
+ 01FB                   .dbline 164
+ 01FB           ;       if (Ri_Mid_Error_Sum<-1020)
+ 01FB 5101              mov A,[_Ri_Mid_Error_Sum+1]
+ 01FD 1104              sub A,4
+ 01FF 5100              mov A,[_Ri_Mid_Error_Sum]
+ 0201 3180              xor A,-128
+ 0203 197C              sbb A,(-4 ^ 0x80)
+ 0205 D007              jnc L23
+ 0207           X22:
+ 0207                   .dbline 166
+ 0207           ;       {
+ 0207           ;               Ri_Mid_Error_Sum=-1020;
+ 0207                   .dbline 166
+ 0207 550104            mov [_Ri_Mid_Error_Sum+1],4
+ 020A 5500FC            mov [_Ri_Mid_Error_Sum],-4
+ 020D                   .dbline 167
+ 020D           ;       }
+ 020D           L23:
+ 020D                   .dbline 168
+ 020D           ;       Ia_Iout=(Ia_PID_Ki*Ri_Mid_Error_Sum)/16;
+ 020D 5F0001            mov [__r1],[_Ri_Mid_Error_Sum+1]
+ 0210 5F0000            mov [__r0],[_Ri_Mid_Error_Sum]
+ 0213 6500              asl [__r1]
+ 0215 6B00              rlc [__r0]
+ 0217 6500              asl [__r1]
+ 0219 6B00              rlc [__r0]
+ 021B 5000              mov A,0
+ 021D 08                push A
+ 021E 5010              mov A,16
+ 0220 08                push A
+ 0221 5100              mov A,[__r0]
+ 0223 08                push A
+ 0224 5100              mov A,[__r1]
+ 0226 08                push A
+ 0227 7C0000            xcall __divmod_16X16_16
+ 022A 18                pop A
+ 022B 530C              mov [_Ia_Iout+1],A
+ 022D 18                pop A
+ 022E 530B              mov [_Ia_Iout],A
+ 0230 38FE              add SP,-2
+ 0232                   .dbline 169
+ 0232           ;       Ia_Output=Ia_Output_Bias+Ia_Pout+Ia_Iout;
+ 0232 510E              mov A,[_Ia_Pout+1]
+ 0234 0100              add A,0
+ 0236 5300              mov [__r1],A
+ 0238 510D              mov A,[_Ia_Pout]
+ 023A 0901              adc A,1
+ 023C 5300              mov [__r0],A
+ 023E 5100              mov A,[__r1]
+ 0240 020C              add A,[_Ia_Iout+1]
+ 0242 5310              mov [_Ia_Output+1],A
+ 0244 5100              mov A,[__r0]
+ 0246 0A0B              adc A,[_Ia_Iout]
+ 0248 530F              mov [_Ia_Output],A
+ 024A                   .dbline 171
+ 024A           ;       //9 Bit Dac so only 0-511 is allowed, for some reason i put the limit at 510, I foget exactly why.
+ 024A           ;       if (Ia_Output<0)
+ 024A 5110              mov A,[_Ia_Output+1]
+ 024C 1100              sub A,0
+ 024E 510F              mov A,[_Ia_Output]
+ 0250 3180              xor A,-128
+ 0252 1980              sbb A,(0 ^ 0x80)
+ 0254 D007              jnc L25
+ 0256           X23:
+ 0256                   .dbline 173
+ 0256           ;       {
+ 0256           ;               Ia_Output=0;
+ 0256                   .dbline 173
+ 0256 551000            mov [_Ia_Output+1],0
+ 0259 550F00            mov [_Ia_Output],0
+ 025C                   .dbline 174
+ 025C           ;       }
+ 025C           L25:
+ 025C                   .dbline 175
+ 025C           ;       if (Ia_Output>510)
+ 025C 50FE              mov A,-2
+ 025E 1210              sub A,[_Ia_Output+1]
+ 0260 510F              mov A,[_Ia_Output]
+ 0262 3180              xor A,-128
+ 0264 5300              mov [__rX],A
+ 0266 5081              mov A,(1 ^ 0x80)
+ 0268 1A00              sbb A,[__rX]
+ 026A D007              jnc L27
+ 026C           X24:
+ 026C                   .dbline 177
+ 026C           ;       {
+ 026C           ;               Ia_Output=510;
+ 026C                   .dbline 177
+ 026C 5510FE            mov [_Ia_Output+1],-2
+ 026F 550F01            mov [_Ia_Output],1
+ 0272                   .dbline 178
+ 0272           ;       }
+ 0272           L27:
+ 0272                   .dbline 179
+ 0272           ;       DAC9_Ia_WriteStall (Ia_Output);
+ 0272 10                push X
+ 0273 580F              mov X,[_Ia_Output]
+ 0275 5110              mov A,[_Ia_Output+1]
+ 0277 7C0000            xcall _DAC9_Ia_WriteStall
+ 027A 20                pop X
+ 027B                   .dbline -2
+ 027B           L16:
+ 027B                   .dbline 0 ; func end
+ 027B 7F                ret
+ 027C                   .dbend
+ 027C                   .dbfunc e IIR_Int _IIR_Int fI
+ 027C           ;              A -> X-8
+ 027C           ;           Vout -> X-7
+ 027C           ;            Vin -> X-5
+ 027C           _IIR_Int::
+ 027C                   .dbline -1
+ 027C 10                push X
+ 027D 4F                mov X,SP
+ 027E                   .dbline 183
+ 027E           ;       //DAC9_Ia_WriteStall (256);
+ 027E           ; }
+ 027E           ; INT IIR_Int(INT Vin, INT Vout, BYTE A)
+ 027E           ; {
+ 027E                   .dbline 184
+ 027E           ;       return (Vout + (Vin - Vout)/A);
+ 027E 52FC              mov A,[X-4]
+ 0280 13FA              sub A,[X-6]
+ 0282 5300              mov [__r1],A
+ 0284 52FB              mov A,[X-5]
+ 0286 1BF9              sbb A,[X-7]
+ 0288 5300              mov [__r0],A
+ 028A 52F8              mov A,[X-8]
+ 028C 5300              mov [__r3],A
+ 028E 5000              mov A,0
+ 0290 08                push A
+ 0291 5100              mov A,[__r3]
+ 0293 08                push A
+ 0294 5100              mov A,[__r0]
+ 0296 08                push A
+ 0297 5100              mov A,[__r1]
+ 0299 08                push A
+ 029A 7C0000            xcall __divmod_16X16_16
+ 029D 18                pop A
+ 029E 5300              mov [__r1],A
+ 02A0 18                pop A
+ 02A1 5300              mov [__r0],A
+ 02A3 38FE              add SP,-2
+ 02A5 52FA              mov A,[X-6]
+ 02A7 0200              add A,[__r1]
+ 02A9 5300              mov [__r1],A
+ 02AB 52F9              mov A,[X-7]
+ 02AD 0A00              adc A,[__r0]
+ 02AF 5300              mov [__r0],A
+ 02B1                   .dbline -2
+ 02B1           L29:
+ 02B1 20                pop X
+ 02B2                   .dbline 0 ; func end
+ 02B2 7F                ret
+ 02B3                   .dbsym l A -8 c
+ 02B3                   .dbsym l Vout -7 I
+ 02B3                   .dbsym l Vin -5 I
+ 02B3                   .dbend
+                        .area data(ram, con, rel)
+ 0005                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0005           _Ia_PID_Counter::
+ 0005                   .blkb 1
+                        .area idata(rom,lit)
+ 0005 00                .byte 0
+                        .area data(ram, con, rel)
+ 0006                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0006                   .dbsym e Ia_PID_Counter _Ia_PID_Counter c
+ 0006           _Vout_Lookup_Counter::
+ 0006                   .blkb 1
+                        .area idata(rom,lit)
+ 0006 00                .byte 0
+                        .area data(ram, con, rel)
+ 0007                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0007                   .dbsym e Vout_Lookup_Counter _Vout_Lookup_Counter c
+ 0007           _Heater_PID_Counter::
+ 0007                   .blkb 1
+                        .area idata(rom,lit)
+ 0007 00                .byte 0
+                        .area data(ram, con, rel)
+ 0008                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0008                   .dbsym e Heater_PID_Counter _Heater_PID_Counter c
+ 0008           _LCD_Counter::
+ 0008                   .blkb 1
+                        .area idata(rom,lit)
+ 0008 00                .byte 0
+                        .area data(ram, con, rel)
+ 0009                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0009                   .dbsym e LCD_Counter _LCD_Counter c
+ 0009           _Heatup_Counter::
+ 0009                   .blkb 1
+                        .area idata(rom,lit)
+ 0009 00                .byte 0
+                        .area data(ram, con, rel)
+ 000A                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 000A                   .dbsym e Heatup_Counter _Heatup_Counter c
+ 000A           _Str1::
+ 000A                   .blkb 12
+                        .area idata(rom,lit)
+ 000A 4C616D6264613D782E787800  .byte 'L,'a,'m,'b,'d,'a,61,'x,46,'x,'x,0
+                        .area data(ram, con, rel)
+ 0016                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0016                   .dbsym e Str1 _Str1 A[12:12]c
+ 0016           _Str2::
+ 0016                   .blkb 17
+                        .area idata(rom,lit)
+ 0016 54656D70657261747572653D78787843  .byte 'T,'e,'m,'p,'e,'r,'a,'t,'u,'r,'e,61,'x,'x,'x,'C
+ 0026 00                .byte 0
+                        .area data(ram, con, rel)
+ 0027                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0027                   .dbsym e Str2 _Str2 A[17:17]c
+                        .area text(rom, con, rel)
+ 02B3                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 02B3                   .dbfunc e main _main fV
+ 02B3           ;      temp_int2 -> X+7
+ 02B3           ;     temp_ulong -> X+3
+ 02B3           ;      temp_byte -> X+2
+ 02B3           ;       temp_int -> X+0
+ 02B3           _main::
+ 02B3                   .dbline -1
+ 02B3 10                push X
+ 02B4 4F                mov X,SP
+ 02B5 3809              add SP,9
+ 02B7                   .dbline 200
+ 02B7           ; }
+ 02B7           ; 
+ 02B7           ; 
+ 02B7           ; BYTE Ia_PID_Counter=0;
+ 02B7           ; BYTE Vout_Lookup_Counter=0;
+ 02B7           ; BYTE Heater_PID_Counter=0;
+ 02B7           ; BYTE LCD_Counter=0;
+ 02B7           ; BYTE Heatup_Counter=0;
+ 02B7           ; INT Ri_Min,Ri_Max;
+ 02B7           ; INT ip,ip_Justified;
+ 02B7           ; BYTE Lambda_x100;
+ 02B7           ; INT LSU_Temperature_C;
+ 02B7           ; char Str1[] = "Lambda=x.xx";
+ 02B7           ; char Str2[] = "Temperature=xxxC"; 
+ 02B7           ; void main(void)
+ 02B7           ; {
+ 02B7                   .dbline 204
+ 02B7           ;       unsigned long temp_ulong;
+ 02B7           ;       INT temp_int,temp_int2;
+ 02B7           ;       BYTE temp_byte;
+ 02B7           ;       AMUX4_0_InputSelect(AMUX4_0_PORT0_1);        
+ 02B7 10                push X
+ 02B8 5000              mov A,0
+ 02BA 7C0000            xcall _AMUX4_0_InputSelect
+ 02BD                   .dbline 205
+ 02BD           ;       AMUX4_1_InputSelect(AMUX4_1_PORT0_0);
+ 02BD 5000              mov A,0
+ 02BF 7C0000            xcall _AMUX4_1_InputSelect
+ 02C2                   .dbline 206
+ 02C2           ;       INSAMP_Start(INSAMP_LOWPOWER); 
+ 02C2 5001              mov A,1
+ 02C4 7C0000            xcall _INSAMP_Start
+ 02C7                   .dbline 207
+ 02C7           ;     ADCINC_Start(ADCINC_HIGHPOWER);      
+ 02C7 5003              mov A,3
+ 02C9 7C0000            xcall _ADCINC_Start
+ 02CC                   .dbline 208
+ 02CC           ;       DAC9_Ia_Start(DAC9_Ia_HIGHPOWER);
+ 02CC 5003              mov A,3
+ 02CE 7C0000            xcall _DAC9_Ia_Start
+ 02D1                   .dbline 209
+ 02D1           ;       DAC6_VGND_Start(DAC6_VGND_MEDPOWER);
+ 02D1 5002              mov A,2
+ 02D3 7C0000            xcall _DAC6_VGND_Start
+ 02D6                   .dbline 210
+ 02D6           ;       DAC6_VGND_WriteStall (31);
+ 02D6 501F              mov A,31
+ 02D8 7C0000            xcall _DAC6_VGND_WriteStall
+ 02DB                   .dbline 211
+ 02DB           ;     PWM8_Vout_DisableInt();  
+ 02DB 7C0000            xcall _PWM8_Vout_DisableInt
+ 02DE                   .dbline 212
+ 02DE           ;     PWM8_Vout_Start();     
+ 02DE 7C0000            xcall _PWM8_Vout_Start
+ 02E1                   .dbline 213
+ 02E1           ;     PWM8_Heater_DisableInt();  
+ 02E1 7C0000            xcall _PWM8_Heater_DisableInt
+ 02E4                   .dbline 214
+ 02E4           ;     PWM8_Heater_Start();
+ 02E4 7C0000            xcall _PWM8_Heater_Start
+ 02E7                   .dbline 215
+ 02E7           ;       PWM8_NB_Out_DisableInt();  
+ 02E7 7C0000            xcall _PWM8_NB_Out_DisableInt
+ 02EA                   .dbline 216
+ 02EA           ;     PWM8_NB_Out_Start(); 
+ 02EA 7C0000            xcall _PWM8_NB_Out_Start
+ 02ED                   .dbline 217
+ 02ED           ;       ADCINC_GetSamples(0);
+ 02ED 5000              mov A,0
+ 02EF 7C0000            xcall _ADCINC_GetSamples
+ 02F2                   .dbline 218
+ 02F2           ;       SleepTimer_Start();  
+ 02F2 7C0000            xcall _SleepTimer_Start
+ 02F5                   .dbline 219
+ 02F5           ;       SleepTimer_SetInterval(SleepTimer_512_HZ);  
+ 02F5 5000              mov A,0
+ 02F7 7C0000            xcall _SleepTimer_SetInterval
+ 02FA                   .dbline 220
+ 02FA           ;       SleepTimer_EnableInt();   
+ 02FA 7C0000            xcall _SleepTimer_EnableInt
+ 02FD 20                pop X
+ 02FE                   .dbline 221
+ 02FE           ;       M8C_EnableGInt ;  
+ 02FE 7101                      or  F, 01h
+ 0300           
+ 0300                   .dbline 222
+ 0300           ;       LCD_Start();                  // Initialize LCD
+ 0300 10                push X
+ 0301 7C0000            xcall _LCD_Start
+ 0304                   .dbline 223
+ 0304           ;       LCD_InitBG(LCD_SOLID_BG);
+ 0304 5000              mov A,0
+ 0306 7C0000            xcall _LCD_InitBG
+ 0309 20                pop X
+ 030A                   .dbline 225
+ 030A           ; 
+ 030A           ;       for(;;)
+ 030A           L31:
+ 030A                   .dbline 226
+ 030A           ;     {
+ 030A                   .dbline 227
+ 030A           ;               temp_ulong++;
+ 030A 070601            add [X+6],1
+ 030D 0F0500            adc [X+5],0
+ 0310 0F0400            adc [X+4],0
+ 0313 0F0300            adc [X+3],0
+ 0316                   .dbline 228
+ 0316           ;               if ((ADC_IF&1)==1)
+ 0316 5100              mov A,[_ADC_IF]
+ 0318 2101              and A,1
+ 031A 3901              cmp A,1
+ 031C B056              jnz L35
+ 031E                   .dbline 230
+ 031E           ;               {
+ 031E           ;                       ADC_IF=ADC_IF&254;
+ 031E                   .dbline 230
+ 031E 2600FE            and [_ADC_IF],-2
+ 0321                   .dbline 231
+ 0321           ;                       Ri_Min=IIR_Int(Ri_Min_x1*2,Ri_Min,Ri_Filter_Strength);
+ 0321 5004              mov A,4
+ 0323 08                push A
+ 0324 5109              mov A,[_Ri_Min]
+ 0326 08                push A
+ 0327 510A              mov A,[_Ri_Min+1]
+ 0329 08                push A
+ 032A 5F0000            mov [__r1],[_Ri_Min_x1]
+ 032D 550000            mov [__r0],0
+ 0330 6500              asl [__r1]
+ 0332 6B00              rlc [__r0]
+ 0334 5100              mov A,[__r0]
+ 0336 08                push A
+ 0337 5100              mov A,[__r1]
+ 0339 08                push A
+ 033A 9F40              xcall _IIR_Int
+ 033C 38FB              add SP,-5
+ 033E 5F0A00            mov [_Ri_Min+1],[__r1]
+ 0341 5F0900            mov [_Ri_Min],[__r0]
+ 0344                   .dbline 232
+ 0344           ;                       Ri_Delta=Ri_Max-Ri_Min;
+ 0344 5108              mov A,[_Ri_Max+1]
+ 0346 120A              sub A,[_Ri_Min+1]
+ 0348 531C              mov [_Ri_Delta+1],A
+ 034A 5107              mov A,[_Ri_Max]
+ 034C 1A09              sbb A,[_Ri_Min]
+ 034E 531B              mov [_Ri_Delta],A
+ 0350                   .dbline 233
+ 0350           ;                       Ri_Mid=(Ri_Max+Ri_Min)/2;
+ 0350 5108              mov A,[_Ri_Max+1]
+ 0352 020A              add A,[_Ri_Min+1]
+ 0354 5300              mov [__r1],A
+ 0356 5107              mov A,[_Ri_Max]
+ 0358 0A09              adc A,[_Ri_Min]
+ 035A 5300              mov [__r0],A
+ 035C 5000              mov A,0
+ 035E 08                push A
+ 035F 5002              mov A,2
+ 0361 08                push A
+ 0362 5100              mov A,[__r0]
+ 0364 08                push A
+ 0365 5100              mov A,[__r1]
+ 0367 08                push A
+ 0368 7C0000            xcall __divmod_16X16_16
+ 036B 18                pop A
+ 036C 531E              mov [_Ri_Mid+1],A
+ 036E 18                pop A
+ 036F 531D              mov [_Ri_Mid],A
+ 0371 38FE              add SP,-2
+ 0373                   .dbline 234
+ 0373           ;               }
+ 0373           L35:
+ 0373                   .dbline 235
+ 0373           ;               if ((ADC_IF&2)==2)
+ 0373 5100              mov A,[_ADC_IF]
+ 0375 2102              and A,2
+ 0377 3902              cmp A,2
+ 0379 B056              jnz L37
+ 037B                   .dbline 237
+ 037B           ;               {
+ 037B           ;                       ADC_IF=ADC_IF&253;
+ 037B                   .dbline 237
+ 037B 2600FD            and [_ADC_IF],-3
+ 037E                   .dbline 238
+ 037E           ;                       Ri_Max=IIR_Int(Ri_Max_x1*2,Ri_Max,Ri_Filter_Strength);
+ 037E 5004              mov A,4
+ 0380 08                push A
+ 0381 5107              mov A,[_Ri_Max]
+ 0383 08                push A
+ 0384 5108              mov A,[_Ri_Max+1]
+ 0386 08                push A
+ 0387 5F0000            mov [__r1],[_Ri_Max_x1]
+ 038A 550000            mov [__r0],0
+ 038D 6500              asl [__r1]
+ 038F 6B00              rlc [__r0]
+ 0391 5100              mov A,[__r0]
+ 0393 08                push A
+ 0394 5100              mov A,[__r1]
+ 0396 08                push A
+ 0397 9EE3              xcall _IIR_Int
+ 0399 38FB              add SP,-5
+ 039B 5F0800            mov [_Ri_Max+1],[__r1]
+ 039E 5F0700            mov [_Ri_Max],[__r0]
+ 03A1                   .dbline 239
+ 03A1           ;                       Ri_Delta=Ri_Max-Ri_Min;
+ 03A1 5108              mov A,[_Ri_Max+1]
+ 03A3 120A              sub A,[_Ri_Min+1]
+ 03A5 531C              mov [_Ri_Delta+1],A
+ 03A7 5107              mov A,[_Ri_Max]
+ 03A9 1A09              sbb A,[_Ri_Min]
+ 03AB 531B              mov [_Ri_Delta],A
+ 03AD                   .dbline 240
+ 03AD           ;                       Ri_Mid=(Ri_Max+Ri_Min)/2;
+ 03AD 5108              mov A,[_Ri_Max+1]
+ 03AF 020A              add A,[_Ri_Min+1]
+ 03B1 5300              mov [__r1],A
+ 03B3 5107              mov A,[_Ri_Max]
+ 03B5 0A09              adc A,[_Ri_Min]
+ 03B7 5300              mov [__r0],A
+ 03B9 5000              mov A,0
+ 03BB 08                push A
+ 03BC 5002              mov A,2
+ 03BE 08                push A
+ 03BF 5100              mov A,[__r0]
+ 03C1 08                push A
+ 03C2 5100              mov A,[__r1]
+ 03C4 08                push A
+ 03C5 7C0000            xcall __divmod_16X16_16
+ 03C8 18                pop A
+ 03C9 531E              mov [_Ri_Mid+1],A
+ 03CB 18                pop A
+ 03CC 531D              mov [_Ri_Mid],A
+ 03CE 38FE              add SP,-2
+ 03D0                   .dbline 241
+ 03D0           ;               }
+ 03D0           L37:
+ 03D0                   .dbline 242
+ 03D0           ;               if ((ADC_IF&4)==4)
+ 03D0 5100              mov A,[_ADC_IF]
+ 03D2 2104              and A,4
+ 03D4 3904              cmp A,4
+ 03D6 B027              jnz L39
+ 03D8                   .dbline 244
+ 03D8           ;               {
+ 03D8           ;                       ADC_IF=ADC_IF&251;
+ 03D8                   .dbline 244
+ 03D8 2600FB            and [_ADC_IF],-5
+ 03DB                   .dbline 245
+ 03DB           ;                       ip=IIR_Int(ip_x1*2,ip,ip_Filter_Strength);
+ 03DB 5004              mov A,4
+ 03DD 08                push A
+ 03DE 5105              mov A,[_ip]
+ 03E0 08                push A
+ 03E1 5106              mov A,[_ip+1]
+ 03E3 08                push A
+ 03E4 5F0000            mov [__r1],[_ip_x1]
+ 03E7 550000            mov [__r0],0
+ 03EA 6500              asl [__r1]
+ 03EC 6B00              rlc [__r0]
+ 03EE 5100              mov A,[__r0]
+ 03F0 08                push A
+ 03F1 5100              mov A,[__r1]
+ 03F3 08                push A
+ 03F4 9E86              xcall _IIR_Int
+ 03F6 38FB              add SP,-5
+ 03F8 5F0600            mov [_ip+1],[__r1]
+ 03FB 5F0500            mov [_ip],[__r0]
+ 03FE                   .dbline 246
+ 03FE           ;               }
+ 03FE           L39:
+ 03FE                   .dbline 247
+ 03FE           ;               Ia_PID_Counter+=Sleep_Counter;
+ 03FE 5100              mov A,[_Sleep_Counter]
+ 0400 0405              add [_Ia_PID_Counter],A
+ 0402                   .dbline 248
+ 0402           ;               Heater_PID_Counter+=Sleep_Counter;
+ 0402 5100              mov A,[_Sleep_Counter]
+ 0404 0407              add [_Heater_PID_Counter],A
+ 0406                   .dbline 249
+ 0406           ;               Heatup_Counter+=Sleep_Counter;
+ 0406 5100              mov A,[_Sleep_Counter]
+ 0408 0409              add [_Heatup_Counter],A
+ 040A                   .dbline 250
+ 040A           ;               Vout_Lookup_Counter+=Sleep_Counter;
+ 040A 5100              mov A,[_Sleep_Counter]
+ 040C 0406              add [_Vout_Lookup_Counter],A
+ 040E                   .dbline 251
+ 040E           ;               LCD_Counter+=Sleep_Counter;
+ 040E 5100              mov A,[_Sleep_Counter]
+ 0410 0408              add [_LCD_Counter],A
+ 0412                   .dbline 252
+ 0412           ;               Sleep_Counter=0;
+ 0412 550000            mov [_Sleep_Counter],0
+ 0415                   .dbline 253
+ 0415           ;               if (Ia_PID_Counter>Ia_PID_Counter_Set)
+ 0415 5001              mov A,1
+ 0417 3A05              cmp A,[_Ia_PID_Counter]
+ 0419 D006              jnc L41
+ 041B           X26:
+ 041B                   .dbline 255
+ 041B           ;               {
+ 041B           ;                       Ia_PID_Counter=0;
+ 041B                   .dbline 255
+ 041B 550500            mov [_Ia_PID_Counter],0
+ 041E                   .dbline 256
+ 041E           ;                       Ia_PID();
+ 041E 9D3A              xcall _Ia_PID
+ 0420                   .dbline 257
+ 0420           ;               }
+ 0420           L41:
+ 0420                   .dbline 258
+ 0420           ;               if (Heater_PID_Counter>Heater_PID_Counter_Set)
+ 0420 5019              mov A,25
+ 0422 3A07              cmp A,[_Heater_PID_Counter]
+ 0424 D006              jnc L43
+ 0426           X27:
+ 0426                   .dbline 260
+ 0426           ;               {
+ 0426           ;                       Heater_PID_Counter=0;
+ 0426                   .dbline 260
+ 0426 550700            mov [_Heater_PID_Counter],0
+ 0429                   .dbline 261
+ 0429           ;                       Heater_PID();
+ 0429 9BD5              xcall _Heater_PID
+ 042B                   .dbline 262
+ 042B           ;               }
+ 042B           L43:
+ 042B                   .dbline 263
+ 042B           ;               if (Vout_Lookup_Counter>Vout_Lookup_Counter_Set)
+ 042B 5019              mov A,25
+ 042D 3A06              cmp A,[_Vout_Lookup_Counter]
+ 042F D076              jnc L45
+ 0431           X28:
+ 0431                   .dbline 265
+ 0431           ;               {
+ 0431           ;                       Vout_Lookup_Counter=0;
+ 0431                   .dbline 265
+ 0431 550600            mov [_Vout_Lookup_Counter],0
+ 0434                   .dbline 266
+ 0434           ;                       temp_int=ip-ip_to_Vout_Lookup_Start;
+ 0434 5106              mov A,[_ip+1]
+ 0436 1187              sub A,-121
+ 0438 5401              mov [X+1],A
+ 043A 5105              mov A,[_ip]
+ 043C 1900              sbb A,0
+ 043E 5400              mov [X+0],A
+ 0440                   .dbline 267
+ 0440           ;                       if (temp_int<0)
+ 0440 5201              mov A,[X+1]
+ 0442 1100              sub A,0
+ 0444 5200              mov A,[X+0]
+ 0446 3180              xor A,-128
+ 0448 1980              sbb A,(0 ^ 0x80)
+ 044A D007              jnc L47
+ 044C           X29:
+ 044C                   .dbline 269
+ 044C           ;                       {
+ 044C           ;                               temp_int=0;
+ 044C                   .dbline 269
+ 044C 560100            mov [X+1],0
+ 044F 560000            mov [X+0],0
+ 0452                   .dbline 270
+ 0452           ;                       }
+ 0452           L47:
+ 0452                   .dbline 271
+ 0452           ;                       if (temp_int>(ip_to_Vout_Lookup_Size-1))
+ 0452 509D              mov A,-99
+ 0454 1301              sub A,[X+1]
+ 0456 5200              mov A,[X+0]
+ 0458 3180              xor A,-128
+ 045A 5300              mov [__rX],A
+ 045C 5080              mov A,(0 ^ 0x80)
+ 045E 1A00              sbb A,[__rX]
+ 0460 D007              jnc L49
+ 0462           X30:
+ 0462                   .dbline 273
+ 0462           ;                       {
+ 0462           ;                               temp_int=(ip_to_Vout_Lookup_Size-1);
+ 0462                   .dbline 273
+ 0462 56019D            mov [X+1],-99
+ 0465 560000            mov [X+0],0
+ 0468                   .dbline 274
+ 0468           ;                       }
+ 0468           L49:
+ 0468                   .dbline 275
+ 0468           ;                       PWM8_Vout_WritePulseWidth(ip_to_Vout_Lookup[temp_int]);
+ 0468 5201              mov A,[X+1]
+ 046A 0100              add A,<_ip_to_Vout_Lookup
+ 046C 5300              mov [__r1],A
+ 046E 5200              mov A,[X+0]
+ 0470 0900              adc A,>_ip_to_Vout_Lookup
+ 0472 10                push X
+ 0473 5800              mov X,[__r1]
+ 0475 28                romx
+ 0476 7C0000            xcall _PWM8_Vout_WritePulseWidth
+ 0479 20                pop X
+ 047A                   .dbline 278
+ 047A           ;                       
+ 047A           ;                       #ifdef NB_Out
+ 047A           ;                               temp_byte=23;//0.45v
+ 047A 560217            mov [X+2],23
+ 047D                   .dbline 279
+ 047D           ;                               if (ip<251) // 251 =0.9797787392968
+ 047D 5106              mov A,[_ip+1]
+ 047F 11FB              sub A,-5
+ 0481 5105              mov A,[_ip]
+ 0483 3180              xor A,-128
+ 0485 1980              sbb A,(0 ^ 0x80)
+ 0487 D004              jnc L51
+ 0489           X31:
+ 0489                   .dbline 281
+ 0489           ;                               {
+ 0489           ;                                       temp_byte=46; //0.9v
+ 0489                   .dbline 281
+ 0489 56022E            mov [X+2],46
+ 048C                   .dbline 283
+ 048C           ;                                       
+ 048C           ;                               }
+ 048C           L51:
+ 048C                   .dbline 284
+ 048C           ;                               if (ip>259) //259 = 1.02295956968912
+ 048C 5003              mov A,3
+ 048E 1206              sub A,[_ip+1]
+ 0490 5105              mov A,[_ip]
+ 0492 3180              xor A,-128
+ 0494 5300              mov [__rX],A
+ 0496 5081              mov A,(1 ^ 0x80)
+ 0498 1A00              sbb A,[__rX]
+ 049A D004              jnc L53
+ 049C           X32:
+ 049C                   .dbline 286
+ 049C           ;                               {
+ 049C           ;                                       temp_byte=0; //0v
+ 049C                   .dbline 286
+ 049C 560200            mov [X+2],0
+ 049F                   .dbline 287
+ 049F           ;                               }
+ 049F           L53:
+ 049F                   .dbline 288
+ 049F           ;                               PWM8_NB_Out_WritePulseWidth(temp_byte);
+ 049F 10                push X
+ 04A0 5202              mov A,[X+2]
+ 04A2 7C0000            xcall _PWM8_NB_Out_WritePulseWidth
+ 04A5 20                pop X
+ 04A6                   .dbline 291
+ 04A6           ;                       #endif
+ 04A6           ;                       
+ 04A6           ;               }
+ 04A6           L45:
+ 04A6                   .dbline 292
+ 04A6           ;               if (LCD_Counter>LCD_Counter_Set)
+ 04A6 5032              mov A,50
+ 04A8 3A08              cmp A,[_LCD_Counter]
+ 04AA D0B8              jnc L55
+ 04AC           X33:
+ 04AC                   .dbline 294
+ 04AC           ;               {
+ 04AC           ;                       LCD_Counter=0;
+ 04AC                   .dbline 294
+ 04AC 550800            mov [_LCD_Counter],0
+ 04AF                   .dbline 296
+ 04AF           ;                       #ifdef LCD_Lambda_Graph
+ 04AF           ;                               temp_int=ip-ip_to_Lambda_Lookup_Start;
+ 04AF 5106              mov A,[_ip+1]
+ 04B1 1187              sub A,-121
+ 04B3 5401              mov [X+1],A
+ 04B5 5105              mov A,[_ip]
+ 04B7 1900              sbb A,0
+ 04B9 5400              mov [X+0],A
+ 04BB                   .dbline 297
+ 04BB           ;                               if (temp_int<0)
+ 04BB 5201              mov A,[X+1]
+ 04BD 1100              sub A,0
+ 04BF 5200              mov A,[X+0]
+ 04C1 3180              xor A,-128
+ 04C3 1980              sbb A,(0 ^ 0x80)
+ 04C5 D007              jnc L57
+ 04C7           X34:
+ 04C7                   .dbline 299
+ 04C7           ;                               {
+ 04C7           ;                                       temp_int=0;
+ 04C7                   .dbline 299
+ 04C7 560100            mov [X+1],0
+ 04CA 560000            mov [X+0],0
+ 04CD                   .dbline 300
+ 04CD           ;                               }
+ 04CD           L57:
+ 04CD                   .dbline 301
+ 04CD           ;                               if (temp_int>(ip_to_Lambda_Lookup_Size-1))
+ 04CD 509D              mov A,-99
+ 04CF 1301              sub A,[X+1]
+ 04D1 5200              mov A,[X+0]
+ 04D3 3180              xor A,-128
+ 04D5 5300              mov [__rX],A
+ 04D7 5080              mov A,(0 ^ 0x80)
+ 04D9 1A00              sbb A,[__rX]
+ 04DB D007              jnc L59
+ 04DD           X35:
+ 04DD                   .dbline 303
+ 04DD           ;                               {
+ 04DD           ;                                       temp_int=(ip_to_Lambda_Lookup_Size-1);
+ 04DD                   .dbline 303
+ 04DD 56019D            mov [X+1],-99
+ 04E0 560000            mov [X+0],0
+ 04E3                   .dbline 304
+ 04E3           ;                               }
+ 04E3           L59:
+ 04E3                   .dbline 305
+ 04E3           ;                               Lambda_x100=ip_to_Graph_Lookup[temp_int];
+ 04E3 5201              mov A,[X+1]
+ 04E5 019E              add A,<_ip_to_Graph_Lookup
+ 04E7 5300              mov [__r1],A
+ 04E9 5200              mov A,[X+0]
+ 04EB 099E              adc A,>_ip_to_Graph_Lookup
+ 04ED 10                push X
+ 04EE 5800              mov X,[__r1]
+ 04F0 28                romx
+ 04F1 20                pop X
+ 04F2 5302              mov [_Lambda_x100],A
+ 04F4                   .dbline 306
+ 04F4           ;                               LCD_DrawBG(0,0,16,Lambda_x100);
+ 04F4 10                push X
+ 04F5 5102              mov A,[_Lambda_x100]
+ 04F7 08                push A
+ 04F8 5010              mov A,16
+ 04FA 08                push A
+ 04FB 5000              mov A,0
+ 04FD 08                push A
+ 04FE 08                push A
+ 04FF 7C0000            xcall _LCD_DrawBG
+ 0502 38FC              add SP,-4
+ 0504 20                pop X
+ 0505                   .dbline 310
+ 0505           ;                       #endif
+ 0505           ;                       
+ 0505           ;                       #ifdef LCD_Temperature_Graph
+ 0505           ;                               temp_int=Ri_Delta-Ri_Delta_to_Temperature_C_Start;
+ 0505 511C              mov A,[_Ri_Delta+1]
+ 0507 1171              sub A,113
+ 0509 5401              mov [X+1],A
+ 050B 511B              mov A,[_Ri_Delta]
+ 050D 1900              sbb A,0
+ 050F 5400              mov [X+0],A
+ 0511                   .dbline 311
+ 0511           ;                               if (temp_int<0)
+ 0511 5201              mov A,[X+1]
+ 0513 1100              sub A,0
+ 0515 5200              mov A,[X+0]
+ 0517 3180              xor A,-128
+ 0519 1980              sbb A,(0 ^ 0x80)
+ 051B D007              jnc L61
+ 051D           X36:
+ 051D                   .dbline 313
+ 051D           ;                               {
+ 051D           ;                                       temp_int=0;
+ 051D                   .dbline 313
+ 051D 560100            mov [X+1],0
+ 0520 560000            mov [X+0],0
+ 0523                   .dbline 314
+ 0523           ;                               }
+ 0523           L61:
+ 0523                   .dbline 315
+ 0523           ;                               if (temp_int>(Ri_Delta_to_Temperature_C_Size-1))
+ 0523 504A              mov A,74
+ 0525 1301              sub A,[X+1]
+ 0527 5200              mov A,[X+0]
+ 0529 3180              xor A,-128
+ 052B 5300              mov [__rX],A
+ 052D 5080              mov A,(0 ^ 0x80)
+ 052F 1A00              sbb A,[__rX]
+ 0531 D007              jnc L63
+ 0533           X37:
+ 0533                   .dbline 317
+ 0533           ;                               {
+ 0533           ;                                       temp_int=(Ri_Delta_to_Temperature_C_Size-1);
+ 0533                   .dbline 317
+ 0533 56014A            mov [X+1],74
+ 0536 560000            mov [X+0],0
+ 0539                   .dbline 318
+ 0539           ;                               }
+ 0539           L63:
+ 0539                   .dbline 319
+ 0539           ;                               LSU_Temperature_C=Ri_Delta_to_Graph[temp_int];
+ 0539 5201              mov A,[X+1]
+ 053B 013C              add A,<_Ri_Delta_to_Graph
+ 053D 5300              mov [__r1],A
+ 053F 5200              mov A,[X+0]
+ 0541 093C              adc A,>_Ri_Delta_to_Graph
+ 0543 10                push X
+ 0544 5800              mov X,[__r1]
+ 0546 28                romx
+ 0547 20                pop X
+ 0548 5301              mov [_LSU_Temperature_C+1],A
+ 054A 550000            mov [_LSU_Temperature_C],0
+ 054D                   .dbline 320
+ 054D           ;                               LCD_DrawBG(1,0,16,LSU_Temperature_C);
+ 054D 5F0001            mov [__r0],[_LSU_Temperature_C+1]
+ 0550 10                push X
+ 0551 5100              mov A,[__r0]
+ 0553 08                push A
+ 0554 5010              mov A,16
+ 0556 08                push A
+ 0557 5000              mov A,0
+ 0559 08                push A
+ 055A 5001              mov A,1
+ 055C 08                push A
+ 055D 7C0000            xcall _LCD_DrawBG
+ 0560 38FC              add SP,-4
+ 0562 20                pop X
+ 0563                   .dbline 322
+ 0563           ;                       #endif
+ 0563           ;               }
+ 0563           L55:
+ 0563                   .dbline 323
+ 0563           ;               if (Heatup_Heater_Output<255)
+ 0563 3C04FF            cmp [_Heatup_Heater_Output],-1
+ 0566 DDA3              jnc L31
+ 0568           X38:
+ 0568                   .dbline 325
+ 0568           ;               {   
+ 0568           ;                       if (Heatup_Counter>Heatup_Counter_Set)
+ 0568                   .dbline 325
+ 0568 5064              mov A,100
+ 056A 3A09              cmp A,[_Heatup_Counter]
+ 056C D006              jnc L67
+ 056E           X39:
+ 056E                   .dbline 327
+ 056E           ;                       {
+ 056E           ;                               Heatup_Counter=0;
+ 056E                   .dbline 327
+ 056E 550900            mov [_Heatup_Counter],0
+ 0571                   .dbline 328
+ 0571           ;                               Heatup_Heater_Output++;
+ 0571 7604              inc [_Heatup_Heater_Output]
+ 0573                   .dbline 329
+ 0573           ;                       }
+ 0573           L67:
+ 0573                   .dbline 330
+ 0573           ;                       if ((Ri_Min>50) && (Ri_Max<475) && (Ri_Delta<Ri_Delta_Target))
+ 0573 5032              mov A,50
+ 0575 120A              sub A,[_Ri_Min+1]
+ 0577 5109              mov A,[_Ri_Min]
+ 0579 3180              xor A,-128
+ 057B 5300              mov [__rX],A
+ 057D 5080              mov A,(0 ^ 0x80)
+ 057F 1A00              sbb A,[__rX]
+ 0581 DD88              jnc L31
+ 0583           X40:
+ 0583 5108              mov A,[_Ri_Max+1]
+ 0585 11DB              sub A,-37
+ 0587 5107              mov A,[_Ri_Max]
+ 0589 3180              xor A,-128
+ 058B 1981              sbb A,(1 ^ 0x80)
+ 058D DD7C              jnc L31
+ 058F           X41:
+ 058F 511C              mov A,[_Ri_Delta+1]
+ 0591 118F              sub A,-113
+ 0593 511B              mov A,[_Ri_Delta]
+ 0595 3180              xor A,-128
+ 0597 1980              sbb A,(0 ^ 0x80)
+ 0599 DD70              jnc L31
+ 059B           X42:
+ 059B                   .dbline 332
+ 059B           ;                       {
+ 059B           ;                               Heatup_Heater_Output=255;
+ 059B                   .dbline 332
+ 059B 5504FF            mov [_Heatup_Heater_Output],-1
+ 059E                   .dbline 333
+ 059E           ;                               Ri_Delta_Error_Sum=0;
+ 059E 550300            mov [_Ri_Delta_Error_Sum+1],0
+ 05A1 550200            mov [_Ri_Delta_Error_Sum],0
+ 05A4                   .dbline 334
+ 05A4           ;                       }
+ 05A4                   .dbline 335
+ 05A4           ;               }
+ 05A4                   .dbline 336
+ 05A4           ;       }
+ 05A4                   .dbline 225
+ 05A4                   .dbline 225
+ 05A4 8D65              xjmp L31
+ 05A6           X25:
+ 05A6                   .dbline -2
+ 05A6           L30:
+ 05A6 38F7              add SP,-9
+ 05A8 20                pop X
+ 05A9                   .dbline 0 ; func end
+ 05A9 8FFF              jmp .
+ 05AB                   .dbsym l temp_int2 7 I
+ 05AB                   .dbsym l temp_ulong 3 l
+ 05AB                   .dbsym l temp_byte 2 c
+ 05AB                   .dbsym l temp_int 0 I
+ 05AB                   .dbend
+                        .area bss(ram, con, rel)
+ 0000                   .dbfile C:\Work\Git\SLC_FR~1\SLC_FR~1\SLC_FR~1\main.c
+ 0000           _LSU_Temperature_C::
+ 0000                   .blkb 2
+ 0002                   .dbsym e LSU_Temperature_C _LSU_Temperature_C I
+ 0002           _Lambda_x100::
+ 0002                   .blkb 1
+ 0003                   .dbsym e Lambda_x100 _Lambda_x100 c
+ 0003           _ip_Justified::
+ 0003                   .blkb 2
+ 0005                   .dbsym e ip_Justified _ip_Justified I
+ 0005           _ip::
+ 0005                   .blkb 2
+ 0007                   .dbsym e ip _ip I
+ 0007           _Ri_Max::
+ 0007                   .blkb 2
+ 0009                   .dbsym e Ri_Max _Ri_Max I
+ 0009           _Ri_Min::
+ 0009                   .blkb 2
+ 000B                   .dbsym e Ri_Min _Ri_Min I
+ 000B           _Ia_Iout::
+ 000B                   .blkb 2
+ 000D                   .dbsym e Ia_Iout _Ia_Iout I
+ 000D           _Ia_Pout::
+ 000D                   .blkb 2
+ 000F                   .dbsym e Ia_Pout _Ia_Pout I
+ 000F           _Ia_Output::
+ 000F                   .blkb 2
+ 0011                   .dbsym e Ia_Output _Ia_Output I
+ 0011           _Ri_Mid_Error::
+ 0011                   .blkb 2
+ 0013                   .dbsym e Ri_Mid_Error _Ri_Mid_Error I
+ 0013           _Heater_Iout::
+ 0013                   .blkb 2
+ 0015                   .dbsym e Heater_Iout _Heater_Iout I
+ 0015           _Heater_Pout::
+ 0015                   .blkb 2
+ 0017                   .dbsym e Heater_Pout _Heater_Pout I
+ 0017           _Heater_Output::
+ 0017                   .blkb 2
+ 0019                   .dbsym e Heater_Output _Heater_Output I
+ 0019           _Ri_Delta_Error::
+ 0019                   .blkb 2
+ 001B                   .dbsym e Ri_Delta_Error _Ri_Delta_Error I
+ 001B           _Ri_Delta::
+ 001B                   .blkb 2
+ 001D                   .dbsym e Ri_Delta _Ri_Delta I
+ 001D           _Ri_Mid::
+ 001D                   .blkb 2
+ 001F                   .dbsym e Ri_Mid _Ri_Mid I

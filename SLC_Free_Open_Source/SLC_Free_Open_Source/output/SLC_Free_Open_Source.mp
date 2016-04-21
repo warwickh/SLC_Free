@@ -1,6 +1,6 @@
 Project:      output/SLC_Free_Open_Source
 Build Number: 0
-Date:         Wed Dec 18 12:54:07 2013
+Date:         Mon Jun 16 21:45:02 2014
 Compiler:     ICCM8C
 Version:      7.05.00
 
@@ -205,17 +205,16 @@ Area                               Addr   Size   Decimal Bytes (Attributes)
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------
-                            text   0896   06D1 =   1745. bytes (rel,con,rom,code)
+                            text   0896   0626 =   1574. bytes (rel,con,rom,code)
 
        Addr  Global Symbol
       -----  --------------------------------
        0896  __text_start
        0896  _Heater_PID
        09F0  _Ia_PID
-       0B16  _IIR_Int
-       0B4D  _btoa
-       0BF4  _main
-       0F67  __text_end
+       0B12  _IIR_Int
+       0B49  _main
+       0EBC  __text_end
 
 Area                               Addr   Size   Decimal Bytes (Attributes)
 --------------------------------   ----   ----   ------- ----- ------------

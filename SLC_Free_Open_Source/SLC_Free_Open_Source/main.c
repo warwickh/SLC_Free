@@ -1,7 +1,6 @@
 //----------------------------------------------------------------------------
 // C main line
 //----------------------------------------------------------------------------
-
 #include <m8c.h>        // part specific constants and macros
 #include "PSoCAPI.h"    // PSoC API definitions for all User Modules
 extern BYTE ADC_Counter; //Variable Declared in ADCININT.asm
@@ -33,8 +32,8 @@ extern BYTE Sleep_Counter; //Variable Declared in SleepTimerINT.asm
 	INT Heater_PID_Output_Bias =128;
 #else
 	#define Ri_Mid_Target 271 //256+14.769 = 2.53v = 2.08v(VGND) + 0.45v, PID Target Voltage of Nermest Cell
-	#define Ia_PID_Kp 35
-	#define Ia_PID_Ki 8
+	#define Ia_PID_Kp 25
+	#define Ia_PID_Ki 4
 	#define Ia_Output_Bias 256
 	#define Ri_Delta_Target 143 //PID Target peak to peak Voltage of Nermest Cell
 	#define Heater_PID_Kp -72
@@ -147,24 +146,24 @@ void Ia_PID(void)
 
 	Ri_Mid_Error=Ri_Mid_Target-Ri_Mid;
 	//Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
-	if (Ri_Mid_Error>86)
+	if (Ri_Mid_Error>163)
 	{
-		Ri_Mid_Error=86;
+		Ri_Mid_Error=163;
 	}
-	if (Ri_Mid_Error<-86)
+	if (Ri_Mid_Error<-163)
 	{
-		Ri_Mid_Error=-86;
+		Ri_Mid_Error=-163;
 	}
 	Ia_Pout=(Ia_PID_Kp*Ri_Mid_Error)/16;
 	Ri_Mid_Error_Sum=Ri_Mid_Error_Sum+Ri_Mid_Error;
 	//Put limits on Error so PID does not go Fubar, and also so that the worst case multiplication does not overflow
-	if (Ri_Mid_Error_Sum>256)
+	if (Ri_Mid_Error_Sum>1020)
 	{
-		Ri_Mid_Error_Sum=256;
+		Ri_Mid_Error_Sum=1020;
 	}
-	if (Ri_Mid_Error_Sum<-256)
+	if (Ri_Mid_Error_Sum<-1020)
 	{
-		Ri_Mid_Error_Sum=-256;
+		Ri_Mid_Error_Sum=-1020;
 	}
 	Ia_Iout=(Ia_PID_Ki*Ri_Mid_Error_Sum)/16;
 	Ia_Output=Ia_Output_Bias+Ia_Pout+Ia_Iout;
@@ -185,54 +184,18 @@ INT IIR_Int(INT Vin, INT Vout, BYTE A)
 	return (Vout + (Vin - Vout)/A);
 }
 
-char btoa(BYTE Base10)
-{
-	char ascii;
-	switch (Base10)
-	{
-		case 0:
-			ascii='0';
-			break;
-		case 1:
-			ascii='1';
-			break;
-		case 2:
-			ascii='2';
-			break;
-		case 3:
-			ascii='3';
-			break;
-		case 4:
-			ascii='4';
-			break;
-		case 5:
-			ascii='5';
-			break;
-		case 6:
-			ascii='6';
-			break;
-		case 7:
-			ascii='7';
-			break;
-		case 8:
-			ascii='8';
-			break;
-		case 9:
-			ascii='9';
-	}
-	return (ascii);
-}
-	BYTE Ia_PID_Counter=0;
-	BYTE Vout_Lookup_Counter=0;
-	BYTE Heater_PID_Counter=0;
-	BYTE LCD_Counter=0;
-	BYTE Heatup_Counter=0;
-	INT Ri_Min,Ri_Max;
-	INT ip,ip_Justified;
-	BYTE Lambda_x100;
-	INT LSU_Temperature_C;
-	char Str1[] = "Lambda=x.xx";
-	char Str2[] = "Temperature=xxxC"; 
+
+BYTE Ia_PID_Counter=0;
+BYTE Vout_Lookup_Counter=0;
+BYTE Heater_PID_Counter=0;
+BYTE LCD_Counter=0;
+BYTE Heatup_Counter=0;
+INT Ri_Min,Ri_Max;
+INT ip,ip_Justified;
+BYTE Lambda_x100;
+INT LSU_Temperature_C;
+char Str1[] = "Lambda=x.xx";
+char Str2[] = "Temperature=xxxC"; 
 void main(void)
 {
 	unsigned long temp_ulong;
@@ -329,30 +292,6 @@ void main(void)
 		if (LCD_Counter>LCD_Counter_Set)
 		{
 			LCD_Counter=0;
-			
-			#ifdef LCD_Lambda_Text
-				temp_int=ip-ip_to_Lambda_Lookup_Start;
-				if (temp_int<0)
-				{
-					temp_int=0;
-				}
-				if (temp_int>(ip_to_Lambda_Lookup_Size-1))
-				{
-					temp_int=(ip_to_Lambda_Lookup_Size-1);
-				}
-				Lambda_x100=ip_to_Lambda_Lookup[temp_int];
-				temp_int=Lambda_x100;
-				LCD_Position(0,0);
-				temp_int2=temp_int/100;
-				Str1[7]=btoa(temp_int2);
-				temp_int=temp_int-100*temp_int2;
-				temp_int2=temp_int/10;
-				Str1[9]=btoa(temp_int2);
-				temp_int=temp_int-10*temp_int2;
-				Str1[10]=btoa(temp_int);
-				LCD_PrString(Str1);
-			#endif
-			
 			#ifdef LCD_Lambda_Graph
 				temp_int=ip-ip_to_Lambda_Lookup_Start;
 				if (temp_int<0)
@@ -365,29 +304,6 @@ void main(void)
 				}
 				Lambda_x100=ip_to_Graph_Lookup[temp_int];
 				LCD_DrawBG(0,0,16,Lambda_x100);
-			#endif
-			
-			#ifdef LCD_Temperature_Text
-				temp_int=Ri_Delta-Ri_Delta_to_Temperature_C_Start;
-				if (temp_int<0)
-				{
-					temp_int=0;
-				}
-				if (temp_int>(Ri_Delta_to_Temperature_C_Size-1))
-				{
-					temp_int=(Ri_Delta_to_Temperature_C_Size-1);
-				}
-				LSU_Temperature_C=Ri_Delta_to_Temperature_C[temp_int]+Ri_Delta_to_Temperature_C_Offset;
-				temp_int=LSU_Temperature_C;
-				LCD_Position(1,0);           
-				temp_int2=temp_int/100;
-				Str2[12]=btoa(temp_int2);
-				temp_int=temp_int-100*temp_int2;
-				temp_int2=temp_int/10;
-				Str2[13]=btoa(temp_int2);
-				temp_int=temp_int-10*temp_int2;
-				Str2[14]=btoa(temp_int);
-				LCD_PrString(Str2);
 			#endif
 			
 			#ifdef LCD_Temperature_Graph
